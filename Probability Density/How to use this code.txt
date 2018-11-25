@@ -1,0 +1,78 @@
+This code trains a neural network(NN) to predict the cumulative probability density.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+The NN Structure:
+Input: [(Input_usual*) CDF*]
+
+Output: single value
+
+
+*Input_usual means the input of usual point prediction or prediction interval NN.
+
+*The value of CDF is between 0 to 1. CDF=0.8 means Probability(Output>Target) =0.8
+
+**A wave file is provided in the folder instead of other time series data to avoid copyright issues.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Initial simulation:
+To use the code:Please run 'Main_CDF_NN_training.m' at first.
+
+That file train an NN for the CDF and save to 'Speech.mat'.
+
+Then run 'Main_Plot_probabilistic_forecast.m'.
+
+That file plots probabilistic forecast for each sample and the target for the visualizations.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Simulation with the entire signal(Time consuming):
+
+
+1. Please set collection_start=2000 and run 'Main_CDF_NN_training.m'.
+
+2. Change Observe_start and Observe_end and run 'Main_Plot_probabilistic_forecast.m'. 
+
+3. Can keep (Observe_end - Observe_start) small for faster plotting.
+
+We have trained an NN for the entire signal and the NN is 'Speech0-24k'.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Simulation with a different signal: 
+
+Please load another signal with the function 'loading_signal'
+Keep in mind:
+
+1. The signal should be a one-dimensional array.
+
+2. Consider the length of the signal and the values of indexes.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+To Know about correlation and similarities:
+Read
+ the paper: Prediction Interval with Examples of Similar Pattern and Prediction Strength
+Download code of that paper from Github and Researchgate.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
